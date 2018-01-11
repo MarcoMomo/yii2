@@ -93,7 +93,7 @@ Le résultat de cet URL sera une page affichant "Hello World". La page a les mê
 
 Si vous omettez le paramètre `message` dans l'URL, La page devrait simplement afficher "Hello". C'est parce que `message` est passé en paramètre de la méthode `actionDire()`, et quand il est omis, la valeur par défaut `"Hello"` sera employée à la place.
 
-> Info: L nouvelle page a les mêmes entête et pied de page que les autres pages parce que la méthode [[yii\web\Controller::render()|render()]] intègrera automatiquement le résultat de la vue `dire` dans une pseudo [mise en page](structure-views.md#layouts) qui dans notre cas est située dans `views/layouts/main.php`.
+> Info: L nouvelle page a les mêmes entête et pied de page que les autres pages parce que la méthode render() intègrera automatiquement le résultat de la vue `dire` dans une pseudo [mise en page](structure-views.md#layouts) qui dans notre cas est située dans `views/layouts/main.php`.
 
 Le paramètre `r` dans l'URL ci-dessus nécessite plus d'explications. Il signifie [route](runtime-routing.md), un ID unique commun toute l'application qui fait référence à une action. Le format de la route est `IDContrôleur/IDAction`. Quand l'application reçoit une requête, elle vérifie ce paramêtre, en utilisant la partie `IDContrôleur` pour déterminer quel classe contrôleur doit être instanciée pour traiter la requête. Ensuite, le contrôleur utilisera la partie `IDAction` pour déterminer quelle action doit être instanciée pour effectuer le vrait travail. Dans ce cas d'exemple, la route `site/dire`
 sera comprise comme la classe contrôleur `SiteController` et l'action `dire`. Il en resultera que la méthode `SiteController::actionDire()` sera appelée pour traiter la requête.
